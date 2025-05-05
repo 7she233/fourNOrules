@@ -47,3 +47,6 @@ dataExcel/tushare_stock_basic_modified.csv
 .env
 stock_data.db
 failed_batches.log
+env
+stock_data.db-shm
+stock_data.db-wal

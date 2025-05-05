@@ -50,3 +50,4 @@ failed_batches.log
 env
 stock_data.db-shm
 stock_data.db-wal
+stock_bonus.log

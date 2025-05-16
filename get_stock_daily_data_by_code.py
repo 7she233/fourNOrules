@@ -29,11 +29,11 @@ BALL_CODE_TABLE = os.getenv('BALL_CODE_TABLE', 'ball_code_data') # 新增：从e
 
 # 日期设置逻辑 (优先使用 .env, 其次使用默认值)
 _start_date_env = os.getenv('START_DATE')
-DEFAULT_START_DATE = (datetime.now() - timedelta(days=365*8)).strftime('%Y%m%d') # 默认获取最近8年
+DEFAULT_START_DATE = (datetime.now() - timedelta(days=3)).strftime('%Y%m%d') # 默认到当前-3天
 START_DATE = _start_date_env if _start_date_env else DEFAULT_START_DATE
 
 _end_date_env = os.getenv('END_DATE')
-DEFAULT_END_DATE = (datetime.now() - timedelta(days=1)).strftime('%Y%m%d') # 默认到昨天
+DEFAULT_END_DATE = (datetime.now() - timedelta(days=1)).strftime('%Y%m%d') # 默认到当前-1天
 END_DATE = _end_date_env if _end_date_env else DEFAULT_END_DATE
 
 # API调用配置

@@ -92,7 +92,7 @@ def create_bonus_details_table(conn, table_name):
                 cursor.execute(f"""
                 CREATE TABLE IF NOT EXISTS {table_name} (
                     symbol TEXT NOT NULL,
-                    report_date TEXT,
+                    report_date TEXT NOT NULL,
                     disclosure_date TEXT,
                     bonus_transfer_total_ratio REAL,
                     bonus_share_ratio REAL,
@@ -111,12 +111,12 @@ def create_bonus_details_table(conn, table_name):
                     ex_dividend_date TEXT, 
                     plan_progress TEXT,
                     latest_announcement_date TEXT,
-                    PRIMARY KEY (symbol, ex_dividend_date, plan_announcement_date)
+                    PRIMARY KEY (symbol, report_date)
                 )
                 """)
                 # 考虑为经常查询的列添加索引，例如 symbol, ex_dividend_date
                 cursor.execute(f'CREATE INDEX IF NOT EXISTS idx_{table_name}_symbol ON {table_name}(symbol)')
-                cursor.execute(f'CREATE INDEX IF NOT EXISTS idx_{table_name}_ex_dividend_date ON {table_name}(ex_dividend_date)')
+                cursor.execute(f'CREATE INDEX IF NOT EXISTS idx_{table_name}_report_date ON {table_name}(report_date)')
         logging.info(f"数据表 '{table_name}' 检查/创建完毕")
         return True
     except sqlite3.Error as e:

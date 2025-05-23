@@ -1,6 +1,6 @@
 """
 获取股票分红配送详情 (来自东方财富) 并存储到数据库。
-
+执行时间1h左右
 功能：
 1. 从数据库 ball_code_data 表获取股票代码列表 (ts_code, 作为 symbol 使用)。
 2. 使用 akshare.stock_fhps_detail_em 接口获取每个股票的分红配送历史数据。

@@ -1,0 +1,7 @@
+run_calculate_deviation.bat
+run_get_stock_daily_data.bat
+stock_data.db
+stock_data.db-shm
+stock_data.db-wal
+stock_index_data.db
+dataExcel/
